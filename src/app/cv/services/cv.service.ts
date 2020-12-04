@@ -21,6 +21,10 @@ export class CvService {
     return this.http.get<Personne[]>('https://immense-citadel-91115.herokuapp.com/api/personnes');
   }
 
+  getStaticPersonnes(): Personne[]{
+    return this.personnes;
+  }
+
   selectPersonne(personne: Personne) {
     this.selectPersonneSubject.next(personne);
   }

@@ -15,6 +15,9 @@ export class ListComponent implements OnInit {
     this.cvService.getPersonnes().subscribe(
       (personnes) => this.personnes= personnes
     );
+    if (this.personnes.length == 0){
+      this.personnes = this.cvService.getStaticPersonnes();
+    }
   }
   /*   forwardPersonne(selectedPersonne: Personne) {
     this.forwardSelectedPersonne.emit(selectedPersonne);
